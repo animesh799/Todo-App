@@ -5,6 +5,6 @@ export const connectDb = () => {
     .connect(process.env.MONGO_URI, {
       dbName: process.env.DB_NAME,
     })
-    .then(() => console.log("database connected"))
+    .then((c) => console.log(`database connected ${c.connection.host}`))
     .catch((e) => console.log(e));
 };
